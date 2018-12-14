@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import Motor_Control1
+import Motor_Control
 
 class Button:
 

@@ -1,6 +1,6 @@
-import Motor_Control1
+import Motor_Control
 import Button_ISR
-import Torque_ISR
+#import Torque_ISR
 import RPi.GPIO as GPIO
 from time import sleep
 import random
@@ -73,7 +73,7 @@ class Orchestrator:
     def adjustMode(self):
         startingPosition = self.motorController.getRelPosition()
         newMode = input("What should the new mode be? \n(Options: Full, Half, 1/4, 1/8, 1/16, 1/32) ")
-        self.motorController = Motor_Control1.MotorControl(newMode, startingPosition)
+        self.motorController = Motor_Control.MotorControl(newMode, startingPosition)
     
 if __name__ == '__main__':
     print("__________________________________________________\n")
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     GPIO.setwarnings(False)
     startingPosition = float(input("Enter starting position in micrometers (0 works fine): "))
     res = input("Please enter desired resolution: \n(Options: Full, Half, 1/4, 1/8, 1/16, 1/32) ")
-    motorController = Motor_Control1.MotorControl(res, startingPosition)
+    motorController = Motor_Control.MotorControl(res, startingPosition)
 
     orchestrator = Orchestrator(motorController)
     orchestrator.execute()
