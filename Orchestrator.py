@@ -102,7 +102,7 @@ if __name__ == '__main__':
                     break
 
     GPIO.setwarnings(False)
-    startingPosition = float(input("Enter starting position in micrometers (will default to 0.0): "))
+    startingPosition = float(input("Enter starting position in micrometers (0 works fine): "))
     res = input("Please enter desired resolution: \n(Options: Full, Half, 1/4, 1/8, 1/16, 1/32) ")
     motorController = Motor_Control1.MotorControl(res, startingPosition)
 
